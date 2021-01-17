@@ -6,8 +6,6 @@ import './css/styles.css';
 
 import { NamesProvider } from './providers/names';
 
-import { names } from "./data";
-
 ReactDOM.render(
   <React.StrictMode>
     <NamesProvider>
