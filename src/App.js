@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React , { Fragment, useState } from 'react';
+import './css/styles.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { NamePicker } from './components/name-picker';
+import { Search } from './components/search';
+
+function App({ names }) {
+  const [searchValue, setSearchValue] = useState("");
+
+   return (
+    <Fragment>
+      <Search searchValue={searchValue} setSearchValue={setSearchValue} />
+      <NamePicker names={names} searchValue={searchValue}/>
+   </Fragment>
+   )
 }
 
 export default App;
